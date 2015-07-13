@@ -1,0 +1,15 @@
+{
+  "name": "require-is",
+  "homepage": "https://github.com/guybedford/require-is",
+  "version": "0.0.1",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "f5decb733f9f41731a386e1cef6a4f010f24747b"
+  },
+  "_source": "git://github.com/guybedford/require-is.git",
+  "_target": "~0.0.1",
+  "_originalSource": "require-is",
+  "_direct": true
+}
