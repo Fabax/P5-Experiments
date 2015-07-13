@@ -94,30 +94,3 @@ var s = function( p ) {
 $( document ).ready(function() {
   var myp5 = new p5(s);
 });
-
-
-		// if (cell) {
-		// 	var halfedges = cell.halfedges,
-		// 		nHalfedges = halfedges.length;
-		// 	if (nHalfedges > 2) {
-		// 		// v = halfedges[0].getStartpoint();
-		// 		// ctx.beginPath();
-		// 		ctx.moveTo(v.x,v.y);
-		// 		for (var iHalfedge=0; iHalfedge<nHalfedges; iHalfedge++) {
-		// 			v = halfedges[iHalfedge].getEndpoint();
-		// 			ctx.lineTo(v.x,v.y);
-		// 			}
-		// 		ctx.fillStyle = '#faa';
-		// 		ctx.fill();
-		// 		}
-		// 	}
-		// // draw sites
-		// var site;
-		// ctx.beginPath();
-		// ctx.fillStyle = '#44f';
-		// while (nSites--) {
-		// 	site = sites[nSites];
-		// 	ctx.rect(site.x-2/3,site.y-2/3,2,2);
-		// 	}
-		// ctx.fill();
-		// },

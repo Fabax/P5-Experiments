@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<script type='text/javascript' src='../../../require.js'></script>
+<script>
+  require.config({
+    baseUrl: '.',
+    map: {
+      '*': {
+        is: 'require-is/is'
+      }
+    },
+    config: {
+      'require-is/is': {
+        browser: true
+      }
+    }
+  });
+</script>
+
+<script>
+  require(['app', 'is!browser'], function($, browser) {
+    if (browser)
+      console.log($);
+  });
+</script>
+
+<body>
+</body>

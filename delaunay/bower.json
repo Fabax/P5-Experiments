@@ -1,0 +1,10 @@
+{
+  "name": "foundation-compass-app",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation",
+    "p5js": "~0.4.6",
+    "require-is": "~0.0.1"
+  }
+}
