@@ -14,11 +14,12 @@ var s = function( p ) {
     var myCanvas = p.createCanvas(w, h);
     myCanvas.parent('myContainer');
     setUpVoronoi();
+    console.log(diagram.cells);
   };
 
   p.draw = function() {
     p.background(51);
-    drawVoronoi();
+    drawVoronoi2();
 
   };
 
@@ -29,6 +30,7 @@ var s = function( p ) {
   var addPoint = function(){
     sites.push({x : p.mouseX, y : p.mouseY});
     diagram = voronoi.compute(sites, bbox);
+  console.log(diagram.cells);
   };
 
   var setUpVoronoi = function(){
@@ -59,8 +61,63 @@ var s = function( p ) {
     }
   };
 
+  var drawVoronoi2 = function(){
+    //draw center point
+    for (var i = 0; i < diagram.cells.length; i++) {
+      p.push();
+      p.noStroke();
+      p.randomSeed(i*100);
+      p.fill(176,100,28,p.random(0,255));
+      p.beginShape();
+      var cell = diagram.cells[i];
+
+      if(cell){
+
+        var halfedges = cell.halfedges;
+        var nHalfedges = halfedges.length;
+
+        for (var j = 0; j < nHalfedges; j++) {
+          var v = halfedges[j].getEndpoint();
+          p.vertex(v.x,v.y);
+        }
+
+      }
+
+      p.endShape(p.CLOSE);
+      p.pop();
+    }
+  };
+
+
 };
 
 $( document ).ready(function() {
   var myp5 = new p5(s);
 });
+
+
+		// if (cell) {
+		// 	var halfedges = cell.halfedges,
+		// 		nHalfedges = halfedges.length;
+		// 	if (nHalfedges > 2) {
+		// 		// v = halfedges[0].getStartpoint();
+		// 		// ctx.beginPath();
+		// 		ctx.moveTo(v.x,v.y);
+		// 		for (var iHalfedge=0; iHalfedge<nHalfedges; iHalfedge++) {
+		// 			v = halfedges[iHalfedge].getEndpoint();
+		// 			ctx.lineTo(v.x,v.y);
+		// 			}
+		// 		ctx.fillStyle = '#faa';
+		// 		ctx.fill();
+		// 		}
+		// 	}
+		// // draw sites
+		// var site;
+		// ctx.beginPath();
+		// ctx.fillStyle = '#44f';
+		// while (nSites--) {
+		// 	site = sites[nSites];
+		// 	ctx.rect(site.x-2/3,site.y-2/3,2,2);
+		// 	}
+		// ctx.fill();
+		// },
