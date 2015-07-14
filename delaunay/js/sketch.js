@@ -1,7 +1,7 @@
 var s = function( p ) {
 
-  var w = 600;
-  var h = 400;
+  var w = 286*2;
+  var h = 176*2;
   var points;
   var triangles;
 
